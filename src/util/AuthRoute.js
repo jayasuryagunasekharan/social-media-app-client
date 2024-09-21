@@ -9,7 +9,9 @@ function AuthRoute({ component: Component, ...rest }) {
   return (
     <Route
       {...rest}
-      element={user ? <Navigate to="/" /> : <Component />}
+      render={(props) =>
+        user ? <Navigate to="/" /> : <Component {...props} />
+      }
     />
   );
 }
