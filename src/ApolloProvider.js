@@ -7,8 +7,12 @@ import { setContext } from 'apollo-link-context';
 
 import App from './App';
 
+// local host and https://social-media-app-server-4ptu.onrender.com
+
 const httpLink = createHttpLink({
-  uri: 'http://localhost:5000'
+  uri: process.env.NODE_ENV === 'production' 
+    ? 'https://social-media-app-server-4ptu.onrender.com/' 
+    : 'http://localhost:5000' 
 });
 
 const authLink = setContext(() => {
