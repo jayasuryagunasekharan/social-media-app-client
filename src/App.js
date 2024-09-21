@@ -20,10 +20,10 @@ function App() {
       <Router>
         <Container>
           <MenuBar />
-          <Route exact path="/" component={Home} />
-          <AuthRoute exact path="/login" component={Login} />
-          <AuthRoute exact path="/register" component={Register} />
-          <Route exact path="/posts/:postId" component={SinglePost} />
+          <Route exact path="/" element={<Home />} />
+          <AuthRoute exact path="/login" element={<Login />} />
+          <AuthRoute exact path="/register" element={<Register />} />
+          <Route exact path="/posts/:postId" element={<SinglePost />} />
         </Container>
       </Router>
     </AuthProvider>
